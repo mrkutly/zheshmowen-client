@@ -1,18 +1,16 @@
-// Gatsby supports TypeScript natively!
 import React from "react";
-import { PageProps, Link } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import PleaseSignIn from "../components/PleaseSignIn";
+import { PageProps } from "gatsby";
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
+import Center from "../components/styles/Center";
 
 const Index = (props: PageProps) => (
 	<Layout>
-		<SEO title="Page two" />
-		<PleaseSignIn>
-			<h1>Hi from the second page</h1>
-			<p>Welcome to page 2 ({props.path})</p>
-			<Link to="/">Go back to the homepage</Link>
-		</PleaseSignIn>
+		<SEO title="Welcome" />
+		<Center>
+			<h1>"Zheshmowen"</h1>
+			<p>(Bodéwadmimwen for "Language")</p>
+		</Center>
 	</Layout>
 );
 
