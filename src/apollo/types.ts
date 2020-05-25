@@ -4,3 +4,8 @@ export interface User {
 	photo_url: string;
 	affiliation: string;
 };
+
+export interface Group {
+	name: string;
+	id: number;
+}

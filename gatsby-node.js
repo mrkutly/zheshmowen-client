@@ -1,7 +1,12 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// Create client-side paths
 
-// You can delete this file if you're not using it
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+  // Only update the `/groups` page.
+	if (page.path.match(/^\/groups/)) {
+		// This tells it to load the groups page for all "groups/*" routes
+    page.matchPath = "/groups/*"
+    // Update the page.
+    createPage(page)
+  }
+}

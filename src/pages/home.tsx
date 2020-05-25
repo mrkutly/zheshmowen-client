@@ -1,8 +1,8 @@
 import React from "react";
 import { PageProps } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import PleaseSignIn from "../components/PleaseSignIn";
+import SEO from "../components/lib/SEO";
+import PleaseSignIn from "../components/lib/PleaseSignIn";
 
 const Home = (props: PageProps) => (
 	<Layout>

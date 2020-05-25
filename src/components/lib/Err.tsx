@@ -1,5 +1,5 @@
 import React from 'react';
-import Center from './styles/Center';
+import Center from '../styles/Center';
 
 interface ErrProps {
 	error: Error;
