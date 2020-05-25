@@ -27,6 +27,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+			<a href="http://localhost:4000/auth/auth0">Login</a>
     </div>
   </header>
 )
