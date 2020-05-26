@@ -1,11 +1,14 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
 import Layout from '../components/Layout';
+import PleaseSignIn from '../components/lib/PleaseSignIn';
 
 const Notifications = (props: PageProps) => {
 	return (
 		<Layout>
-			Notifications
+			<PleaseSignIn>
+				Notifications
+			</PleaseSignIn>
 		</Layout>
 	);
 };

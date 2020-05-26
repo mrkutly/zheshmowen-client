@@ -26,7 +26,7 @@ const Group = () => {
 
 		const formatted = data?.groupsWhere.map(group => ({
 			label: group.name,
-			value: group.id
+			value: group.slug
 		}));
 
 		return formatted ?? [];

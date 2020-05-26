@@ -6,7 +6,7 @@ export const CURRENT_USER_QUERY = gql`
 		me {
 			email
 			name 
-			photo_url
+			photoUrl
 			affiliation
 		}
 	}
@@ -21,6 +21,7 @@ export const SEARCH_GROUPS_QUERY = gql`
 	query SearchGroups($name: String!) {
 		groupsWhere(name: $name) {
 			name
+			slug
 			id
 		}
 	}
@@ -29,3 +30,40 @@ export const SEARCH_GROUPS_QUERY = gql`
 export interface SearchGroupsData {
 	groupsWhere: Group[];
 };
+
+
+export const GROUP_QUERY = gql`
+	query Group($slug: String!) {
+		groupWhere(slug: $slug) {
+			name
+			slug
+			id
+			posts {
+				body 
+				numLikes
+				user {
+					name 
+					photoUrl
+				}
+				comments {
+					numLikes
+					body 
+					user {
+						name 
+						photoUrl
+					}
+				}
+			}
+			groupUsers {
+				user {
+					name
+					photoUrl
+				}
+			}
+		}
+	}
+`;
+
+export interface GroupData {
+	groupWhere: Group;
+}

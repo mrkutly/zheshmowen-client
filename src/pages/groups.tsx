@@ -7,7 +7,7 @@ import GroupShow from '../components/GroupShow';
 const GroupsPage = (props: PageProps) => (
 	<Router basepath="/groups">
 		<GroupsIndex path="/" />
-		<GroupShow path="/:id" />
+		<GroupShow path="/:slug" />
 	</Router>
 );
 
