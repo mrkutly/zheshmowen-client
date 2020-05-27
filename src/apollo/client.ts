@@ -5,7 +5,7 @@ export const client = new ApolloClient({
 	cache: new InMemoryCache(),
 	connectToDevTools: true,
 	link: new HttpLink({
-		uri: 'http://localhost:4000/api',
+		uri: 'http://localhost:4000/graphql',
 		fetch,
 		credentials: 'include'
 	})

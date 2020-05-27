@@ -38,25 +38,39 @@ export const GROUP_QUERY = gql`
 			name
 			slug
 			id
+			currentUserStatus {
+				isAdmin
+				isBanned
+				isPending
+			}
 			posts {
 				body 
 				numLikes
+				id
 				user {
+					id
 					name 
 					photoUrl
 				}
 				comments {
+					id
 					numLikes
 					body 
 					user {
+						id
 						name 
 						photoUrl
 					}
 				}
 			}
 			groupUsers {
+				id
+				isBanned
+				isAdmin
+				isPending
 				user {
 					name
+					id
 					photoUrl
 				}
 			}

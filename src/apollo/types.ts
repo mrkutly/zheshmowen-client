@@ -1,16 +1,23 @@
 export interface User {
+	id: number;
 	email: string;
 	name: string;
 	photoUrl: string;
 	affiliation: string;
 };
 
+export interface GroupUser extends UserStatus {
+	id: number;
+	user: User;
+}
+
 export interface Group {
 	name: string;
 	slug: string;
 	id: number;
 	posts: Post[];
-	groupUsers: User[];
+	groupUsers: GroupUser[];
+	currentUserStatus: UserStatus;
 }
 
 export interface Post {
@@ -22,7 +29,14 @@ export interface Post {
 }
 
 export interface Comment {
+	id: number;
 	numLikes: number;
 	body: string;
 	user: User;
+}
+
+export interface UserStatus {
+	isAdmin: boolean;
+	isBanned: boolean;
+	isPending: boolean;
 }

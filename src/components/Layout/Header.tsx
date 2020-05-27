@@ -10,6 +10,10 @@ interface HeaderProps {
 }
 
 const HeaderStyles = styled.header`
+	position: sticky;
+	top: 0;
+	background: white;
+	z-index: 10;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

@@ -1,7 +1,8 @@
 :root {
 	--primary: hsla(0,0%,0%,0.7);
+	--secondary: rgb(81, 64, 102);
 	--accent: #e48b7d;
-	--secondary: rgb(125, 4, 141);
+	--secondary-accent: rgb(4, 170, 93);
 	--one-space: 12px;
 	--two-spaces: 24px;
 	--three-spaces: 36px;
