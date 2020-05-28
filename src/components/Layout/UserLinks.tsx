@@ -15,6 +15,7 @@ const UserLinks = ({ me }: UserLinkProps) => (
 		<Link to="/settings">
 			<img src={me.photoUrl} width="40" style={{ borderRadius: "100%" }} alt="your profile picture" />
 		</Link>
+		<a href="http://localhost:4000/auth/logout">Logout</a>
 	</>
 );
 

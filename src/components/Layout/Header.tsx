@@ -36,6 +36,11 @@ const HeaderStyles = styled.header`
 			text-decoration: none;
 		}
 	}
+
+	div.user-links {
+		display: flex;
+		align-items: center;
+	}
 `;
 
 const Header = ({ siteTitle }: HeaderProps) => (
@@ -48,13 +53,11 @@ const Header = ({ siteTitle }: HeaderProps) => (
 					<h2>
 						<Link to="/">Zheshmowen</Link>
 					</h2>
-					{/* <div style={{ width: 'auto' }}> */}
 					<GroupSearch />
-					<div>
+					<div className="user-links">
 						{!loading && me ? <UserLinks me={me} /> : null}
-						{!loading && !me ? <a href="http://localhost:4000/auth/auth0">Login or Signup</a> : null}
+						{!me && <a href="http://localhost:4000/auth/auth0">Login or Signup</a>}
 					</div>
-					{/* </div> */}
 				</HeaderStyles>
 			);
 		}}

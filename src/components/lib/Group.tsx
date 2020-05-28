@@ -4,6 +4,7 @@ import Posts from './Posts';
 import Members from './Members';
 import Center from '../styles/Center';
 import { Group as GroupType } from '../../apollo/types';
+import RequestToJoin from './RequestToJoin';
 
 interface GroupProps {
 	group: GroupType;
@@ -12,6 +13,7 @@ interface GroupProps {
 const GroupStyles = styled.div`
 	.sidebar {
 		position: fixed;
+		padding-right: var(--two-spaces);
 		width: 25vw;
 	}
 
@@ -26,12 +28,13 @@ const GroupStyles = styled.div`
 `;
 
 const Group = ({ group }: GroupProps) => {
-	if (group.currentUserStatus.isBanned) return <Center>You are not permitted to view this page.</Center>;
+	if (group.currentUserStatus?.isBanned) return <Center>You are not permitted to view this page.</Center>;
 
 	return (
 		<GroupStyles>
 			<div className="sidebar">
 				<h1>{group.name}</h1>
+				<RequestToJoin groupId={group.id} userStatus={group.currentUserStatus} />
 			</div>
 			<div className="content">
 				<Posts posts={group.posts} />

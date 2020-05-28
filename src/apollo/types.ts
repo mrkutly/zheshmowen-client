@@ -17,7 +17,7 @@ export interface Group {
 	id: number;
 	posts: Post[];
 	groupUsers: GroupUser[];
-	currentUserStatus: UserStatus;
+	currentUserStatus: UserStatus | null;
 }
 
 export interface Post {
